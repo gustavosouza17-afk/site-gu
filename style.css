@@ -1,0 +1,408 @@
+
+/* =========================================
+   DESIGN SYSTEM
+========================================= */
+
+:root {
+    --verde-escuro: #071c16;
+    --verde-principal: #102c22;
+    --verde-secundario: #193c2e;
+    --verde-hover: #28513d;
+
+    --verde-limao: #a3e635;
+    --verde-destaque: #bef264;
+
+    --fundo: #081b15;
+    --fundo-card: #122b21;
+    --fundo-menu: #0d241b;
+
+    --texto: #e5eee8;
+    --texto-secundario: #a8bdb0;
+
+    --borda: rgba(163, 230, 53, 0.14);
+
+    --largura-menu: 280px;
+    --largura-conteudo: 1140px;
+    --raio: 14px;
+
+    --sombra: 0 8px 28px rgba(0, 0, 0, 0.18);
+    --transicao: 0.25s ease;
+}
+
+/* =========================================
+   CONFIGURAÇÕES GERAIS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #071c16 0%,
+        #102c22 55%,
+        #0b2119 100%
+    );
+
+    color: var(--texto);
+    text-align: center;
+    line-height: 1.7;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+main,
+.main-content,
+.conteudo-principal {
+    width: 100%;
+    max-width: var(--largura-conteudo);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* =========================================
+   TÍTULOS CENTRALIZADOS
+========================================= */
+
+h1, h2, h3, h4 {
+    color: var(--verde-limao);
+
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+
+    text-align: center;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+/* =========================================
+   PARÁGRAFOS E CARDS CENTRALIZADOS
+========================================= */
+
+p {
+    width: 100%;
+    max-width: 1140px;
+
+    margin: 0 auto 24px;
+    padding: 25px 30px;
+
+    font-size: 1rem;
+    line-height: 1.9;
+
+    color: var(--texto-secundario);
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #153327,
+        #10271e
+    );
+
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    white-space: pre-line;
+
+    transition:
+        transform var(--transicao),
+        border-color var(--transicao),
+        box-shadow var(--transicao);
+}
+
+p:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(163, 230, 53, 0.3);
+
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.24);
+}
+
+/* =========================================
+   MENU LATERAL
+========================================= */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+    padding: 20px 12px;
+
+    background: linear-gradient(
+        180deg,
+        #102a20,
+        #091e16
+    );
+
+    border-right: 1px solid var(--borda);
+
+    text-align: left;
+}
+
+/* LINKS DO MENU */
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+
+    padding: 14px 18px;
+
+    color: #c5d8cb;
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 10px;
+    border-left: 3px solid transparent;
+
+    transition:
+        background var(--transicao),
+        color var(--transicao),
+        border-color var(--transicao),
+        padding var(--transicao);
+}
+
+/* HOVER */
+
+.sidebar-menu a:hover {
+    background: rgba(163, 230, 53, 0.09);
+
+    color: var(--verde-limao);
+    border-left-color: var(--verde-limao);
+
+    padding-left: 23px;
+}
+
+/* LINK ATIVO */
+
+.sidebar-menu a.active {
+    background: rgba(163, 230, 53, 0.13);
+
+    color: var(--verde-limao);
+    font-weight: 600;
+
+    border-left: 3px solid var(--verde-limao);
+}
+
+/* =========================================
+   IMAGENS CENTRALIZADAS
+========================================= */
+
+img {
+    display: block;
+
+    max-width: 100%;
+    height: auto;
+
+    margin: 20px auto;
+
+    border-radius: 12px;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: var(--verde-limao);
+    transition: color var(--transicao);
+}
+
+a:hover {
+    color: var(--verde-destaque);
+}
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+button,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    background: var(--verde-limao);
+    color: #102015;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    text-align: center;
+    text-decoration: none;
+
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transicao),
+        transform var(--transicao),
+        box-shadow var(--transicao);
+}
+
+button:hover,
+.btn:hover {
+    background: var(--verde-destaque);
+    color: #102015;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 20px rgba(163, 230, 53, 0.18);
+}
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid var(--verde-limao);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   BARRA DE ROLAGEM
+========================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #091e16;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #315744;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #56815f;
+}
+
+/* =========================================
+   RESPONSIVIDADE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    main,
+    .main-content,
+    .conteudo-principal {
+        width: 100%;
+        padding: 20px 12px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    p {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto 18px;
+        padding: 18px;
+
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+    .sidebar-menu {
+        padding: 12px 8px;
+    }
+
+    .sidebar-menu a {
+        padding: 12px 14px;
+        font-size: 13px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border: #a3e635;
+
+        margin: 16px auto;
+        object-fit: contain;
+    }
+
+    button,
+    .btn {
+        max-width: 100%;
+    }
+}
+
+/* =========================================
+   MOVIMENTO REDUZIDO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
